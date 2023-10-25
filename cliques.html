@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="diminuir()">-</button>
+    <h1 id="contador">Clique para começar</h1>
+    <button onclick="aumentar()">+</button>
+
+    <script>
+        var contador = document.getElementById("contador");
+        var quantidadeDeCliques = 0;
+
+        function aumentar() {
+            quantidadeDeCliques = quantidadeDeCliques + 1;
+            contador.textContent = quantidadeDeCliques;
+        }
+
+        function diminuir() {
+            if (quantidadeDeCliques > 1)
+                quantidadeDeCliques = quantidadeDeCliques - 1;
+            contador.textContent = quantidadeDeCliques;
+        }
+        else {
+            contador.innerText = "Digite algo para começar ";
+        }
+
+        function resetar() {
+            quantidadeDeCliques = 0;
+            contador.innerText = "Digite algo para começar ";
+
+        }
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "+" || event.key == "=") {
+                aumentar();
+            } else if (event.key === "-") {
+                diminuir();
+            }
+
+            if (event.key === "r") {
+                resetar();
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
