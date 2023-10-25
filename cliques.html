@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contador de Cliques</title>
     <style>
         h1 {
             display: inline-block;
@@ -27,23 +27,21 @@
         }
 
         function diminuir() {
-            if (quantidadeDeCliques > 1)
+            if (quantidadeDeCliques > 1) {
                 quantidadeDeCliques = quantidadeDeCliques - 1;
-            contador.textContent = quantidadeDeCliques;
-        }
-        else {
-            contador.innerText = "Digite algo para começar ";
+                contador.textContent = quantidadeDeCliques;
+            } else {
+                contador.innerText = "Digite algo para começar";
+            }
         }
 
         function resetar() {
             quantidadeDeCliques = 0;
-            contador.innerText = "Digite algo para começar ";
-
+            contador.innerText = "Clique para começar";
         }
 
         document.addEventListener("keydown", function (event) {
-
-            if (event.key === "+" || event.key == "=") {
+            if (event.key === "+" || event.key === "=") {
                 aumentar();
             } else if (event.key === "-") {
                 diminuir();
@@ -53,8 +51,6 @@
                 resetar();
             }
         });
-
-
     </script>
 </body>
 
